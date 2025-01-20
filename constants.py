@@ -68,6 +68,7 @@ COMMENT_TEXT_SIZE = 16
 UI_FONT_SIZE = 20
 
 LINE_MAX_LENGTH = 20
+FONT_NAME = "chalkduster.ttf"
 
 BLACK = (0, 0, 0)
 GREY = (50, 50, 50)
