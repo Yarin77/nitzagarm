@@ -14,6 +14,7 @@ POST_Y_POS = 0.2 * WINDOW_HEIGHT
 
 img1_post_path = "images/ronaldo.jpg"
 img2_post_path = "images/noa_kirel.jpg"
+img3_post_path = "images/eitan.jpg"
 
 
 # Like button proportions and position on the screen
