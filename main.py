@@ -22,7 +22,7 @@ def main():
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
-    posts_data_list = [[img1_post_path, "noam_belkin", "dimona", "give this post a like if you think messi is better", "image"],
+    posts_data_list = [[img1_post_path, "noam_belkin", "The father land", "Isagi is legit NPC #MOVE!!!!", "image"],
                   [img2_post_path, "omerKorin1808", "beer sheva", "love the camel", "image"],
                   ["We must sign new Wingback! Dalot can't do the job for us!", "mashash", "Manchester", "i am gay", (255, 255, 0), (255, 0, 0), "text"],
                   [img3_post_path, "eitan_levi", "beer sheva", "after a quick goon session", "image"]]

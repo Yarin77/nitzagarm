@@ -1,6 +1,6 @@
 import pygame
 from constants import *
-from helpers import screen, from_text_to_array
+from helpers import screen, from_text_to_array, center_text
 from Post import Post
 
 class TextPost(Post):
@@ -13,13 +13,14 @@ class TextPost(Post):
     def display(self, start_comment):
         rect = pygame.Rect(POST_X_POS, POST_Y_POS, POST_WIDTH, POST_HEIGHT)
         pygame.draw.rect(screen, self.background_color, rect)
+
         font1 = pygame.font.SysFont(FONT_NAME, TEXT_POST_FONT_SIZE)
         array_text = from_text_to_array(self.text)
         count = 0
         for item in array_text:
             count += 1
             text_post = font1.render(item, True, self.text_color)
-            pos = self.center_text(len(array_text), text_post, count)
+            pos = center_text(len(array_text), text_post, count)
             screen.blit(text_post, pos)
 
         font2 = pygame.font.SysFont(FONT_NAME, UI_FONT_SIZE)
@@ -40,7 +41,6 @@ class TextPost(Post):
         #     desc_post = font2.render(item, True, BLACK)
         #     screen.blit(desc_post, (DESCRIPTION_TEXT_X_POS, pos_y))
         #     pos_y += UI_FONT_SIZE
-
 
         text_desc = font2.render(self.description, True, BLACK)
         screen.blit(text_desc, [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
