@@ -85,9 +85,7 @@ def read_comment_from_user():
                     new_comment += event.unicode
                 font2 = pygame.font.SysFont('chalkduster.ttf', UI_FONT_SIZE, bold=False)
                 img2 = font2.render(new_comment, True, (50, 50, 50))
-                screen.blit(img2,
-                            (VIEW_MORE_COMMENTS_X_POS + 1,
-                             VIEW_MORE_COMMENTS_Y_POS + 1))
+                screen.blit(img2,(VIEW_MORE_COMMENTS_X_POS + 1, VIEW_MORE_COMMENTS_Y_POS + 1))
                 pygame.display.update()
     return new_comment
 

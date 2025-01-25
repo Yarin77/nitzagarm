@@ -10,6 +10,12 @@ POST_HEIGHT = 0.41 * WINDOW_HEIGHT
 POST_X_POS = 0.064 * WINDOW_WIDTH
 POST_Y_POS = 0.2 * WINDOW_HEIGHT
 
+# image post's path
+
+img1_post_path = "images/ronaldo.jpg"
+img2_post_path = "images/noa_kirel.jpg"
+
+
 # Like button proportions and position on the screen
 LIKE_BUTTON_X_POS = 0.1 * WINDOW_WIDTH
 LIKE_BUTTON_Y_POS = 0.622 * WINDOW_HEIGHT

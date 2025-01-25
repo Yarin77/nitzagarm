@@ -1,10 +1,10 @@
 import pygame
 from constants import *
-from helpers import screen
+from helpers import screen, from_text_to_array
+from Post import Post
 
-
-class text_post:
-    def __init__(self,username, location, description, text, text_color, background_color):
+class TextPost(Post):
+    def __init__(self, text, username, location, description, text_color, background_color):
         super().__init__(username, location, description)
         self.text = text
         self.text_color = text_color
@@ -12,22 +12,28 @@ class text_post:
 
     def display(self):
         font1 = pygame.font.SysFont(FONT_NAME, TEXT_POST_FONT_SIZE)
-        text = font1.render(self.text, True, BLACK)
-        screen.blit(text, [POST_X_POS, POST_Y_POS])
+        array_text = from_text_to_array(self.text)
+        count = 0
+        for item in array_text:
+            count += 1
+            text_post = font1.render(item, True, BLACK)
+            pos = self.center_text(len(array_text), text_post, count)
+            screen.blit(text_post, pos)
 
         font2 = pygame.font.SysFont(FONT_NAME, UI_FONT_SIZE)
-        text = font2.render(self.text, True, BLACK)
-        screen.blit(text, [USER_NAME_X_POS, USER_NAME_Y_POS])
+        text_user = font2.render(self.username, True, BLACK)
+        screen.blit(text_user, [USER_NAME_X_POS, USER_NAME_Y_POS])
 
-        text = font2.render(self.text, True, BLACK)
-        screen.blit(text, [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
+        text_loc = font2.render(self.location, True, BLACK)
+        screen.blit(text_loc, [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
 
-        text = font2.render(self.text, True, BLACK)
-        screen.blit(text, [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
+        text_like = font2.render(str(self.likes_counter), True, BLACK)
+        screen.blit(text_like, [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
 
-        text = font2.render(self.text, True, BLACK)
-        screen.blit(text, [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
+        text_desc = font2.render(self.description, True, BLACK)
+        screen.blit(text_desc, [DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS])
 
+        self.display_comments()
 
 
 

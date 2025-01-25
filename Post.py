@@ -8,7 +8,7 @@ class Post:
     """
     A class used to represent post on Nitzagram
     """
-    def _init_(self, username, location, description):
+    def __init__(self, username, location, description):
         self.username = username
         self.location = location
         self.description = description
@@ -48,3 +48,53 @@ class Post:
             position_index += 1
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
+
+    def from_text_to_array(self, text):
+        """
+        the function get text and break it into sentences that fits the screen, in
+        case the text too long to for one line
+        :param text: string
+            text to show on screen
+        :return: list of sentences
+        """
+        text_array = []
+        text_to_edit = text
+        if len(text) > 20:
+            while not (len(text_to_edit) <= 0):
+                if len(text_to_edit) < LINE_MAX_LENGTH:
+                    text_array.append(text_to_edit)
+                    text_to_edit = ""
+                else:
+                    temp = text_to_edit[0: LINE_MAX_LENGTH]
+                    text_to_edit = text_to_edit[LINE_MAX_LENGTH:]
+                    while not (temp[-1] == ' ') and not (temp[-1] == ','):
+                        text_to_edit = temp[-1] + text_to_edit
+                        temp_len = int(len(temp))
+                        temp = temp[0: temp_len - 1]
+                    text_array.append(temp)
+        else:
+            text_array.append(text)
+        return text_array
+
+    def center_text(self, num_of_rows, text_to_display, row_number):
+        """
+        center a sentence on screen
+        :param num_of_rows: int
+            number of sentences on screen
+        :param text_to_display: string
+            sentence to center
+        :param row_number: int
+            sentence row number in total text
+        :return: tuple
+            position of centered text
+        """
+        horizontal_margin = \
+            (POST_HEIGHT - num_of_rows * TEXT_POST_FONT_SIZE) // 2
+        # Get the text object size (height and width)
+        text_rect = text_to_display.get_rect()
+        # Center the text to the center of X axis
+        text_rect.x = ((POST_WIDTH - text_rect.width) // 2) + 20
+        # Center the text to the center of the post on Y axis
+        text_rect.y = (POST_Y_POS + horizontal_margin +
+                       row_number * TEXT_POST_FONT_SIZE)
+        return text_rect
