@@ -25,6 +25,7 @@ def main():
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
     # [img1_post_path, "noam_belkin", "The father land", "Isagi is legit NPC #MOVE!!!!", "image"]
+
     posts_data_list = [[img2_post_path, "omerKorin1808", "beer sheva", "love the camel", "image"],
                   ["We must sign new Wingback! Dalot can't do the job for us!", "mashash", "Manchester", "i am gay", (255, 255, 0), (255, 0, 0), "text"],
                   [img3_post_path, "eitan_levi", "beer sheva", "after a quick goon session", "image"]]
@@ -32,7 +33,10 @@ def main():
     posts_list = []
     for post_data in posts_data_list:
         if post_data[-1] == "image":
-            post = ImagePost(post_data[0], post_data[1], post_data[2], post_data[3])
+            if len(post_data) == 5:
+                post = ImagePost(post_data[0], post_data[1], post_data[2], post_data[3])
+            else:
+                post = ImagePost(post_data[0], post_data[1], post_data[2], post_data[3], post_data[4])
         else:
             post = TextPost(post_data[0], post_data[1], post_data[2], post_data[3], post_data[4], post_data[5])
         posts_list.append(post)
