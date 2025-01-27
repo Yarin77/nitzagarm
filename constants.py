@@ -17,7 +17,6 @@ img2_post_path = "images/noa_kirel.jpg"
 img3_post_path = "images/eitan.jpg"
 like_img_path = "images/heart.png"
 
-
 # Like button proportions and position on the screen
 LIKE_BUTTON_X_POS = 0.1 * WINDOW_WIDTH
 LIKE_BUTTON_Y_POS = 0.622 * WINDOW_HEIGHT

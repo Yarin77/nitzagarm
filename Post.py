@@ -25,6 +25,9 @@ class Post:
     def display(self, start_comment):
         pass
 
+    def share(self):
+        pass
+
 
     def display_comments(self, start_comment):
         """
