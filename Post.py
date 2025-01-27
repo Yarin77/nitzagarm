@@ -25,7 +25,7 @@ class Post:
     def display(self, start_comment):
         pass
 
-    def share(self):
+    def share(self, phonum):
         pass
 
 

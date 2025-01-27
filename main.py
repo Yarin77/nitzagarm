@@ -78,8 +78,8 @@ def main():
                         start_comment = 0
                     else:
                         start_comment += NUM_OF_COMMENTS_TO_DISPLAY
-                # elif mouse_in_button(share_button, pos):
-                    # if isinstance(cur_post, ImagePost):
+                elif mouse_in_button(share_button, pos):
+                    cur_post.share("972+539333115")
 
 
 
