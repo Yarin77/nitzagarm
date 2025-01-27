@@ -8,6 +8,7 @@ from text_post import TextPost
 from Comment import Comment
 
 
+
 def main():
     # Set up the game display, clock and headline
     pygame.init()
