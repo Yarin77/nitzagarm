@@ -1,8 +1,6 @@
 from constants import *
 from helpers import screen, draw_comment_text_box
 import pygame
-# from ImagePost import ImagePost
-# from text_post import TextPost
 class Comment:
 
     def read_comment_from_user(self):
