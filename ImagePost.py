@@ -1,4 +1,5 @@
 import pygame
+import pywhatkit
 from constants import *
 from Post import Post
 from helpers import screen, from_text_to_array
@@ -10,6 +11,10 @@ class ImagePost(Post):
         super().__init__(username, location, description)
         self.image = image
         self.filter = filter
+
+    def share(self, phone_num):
+        msg = self.image + "\n" + self.description
+        pywhatkit.sendwhatmsg_instantly(phone_num, msg)
 
     def display(self, start_comment):
         img = pygame.image.load(self.image)

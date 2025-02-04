@@ -1,4 +1,5 @@
 import pygame
+import pywhatkit
 from constants import *
 from helpers import screen, from_text_to_array, center_text
 from Post import Post
@@ -9,6 +10,10 @@ class TextPost(Post):
         self.text = text
         self.text_color = text_color
         self.background_color = background_color
+
+    def share(self, phone_num):
+        msg = self.text + " \n " + self.description
+        pywhatkit.sendwhatmsg_instantly(phone_num, msg)
 
     def display(self, start_comment):
         rect = pygame.Rect(POST_X_POS, POST_Y_POS, POST_WIDTH, POST_HEIGHT)

@@ -1,7 +1,5 @@
 from helpers import screen, from_text_to_array
-
 import pygame
-
 from constants import *
 class Filter:
 
