@@ -32,8 +32,7 @@ def main():
                        [img1_post_path, "noam_belkin", "The father land", "Isagi is legit NPC #MOVE!!!!", purple_filter,"image"],
 
                   ["We must sign new Wingback! Dalot can't do the job for us!", "mashash", "Manchester", "wow"
-                                                                                                         "", (255, 255, 0), (255, 0, 0), "text"],
-                  [img3_post_path, "eitan_levi", "beer sheva", "after a quick goon session", "image"]]
+                                                                                                         "", (255, 255, 0), (255, 0, 0), "text"]]
 
     posts_list = []
     for post_data in posts_data_list:
